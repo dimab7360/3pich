@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{% block title %} {% endblock %}</title>
+    {% block css_add %} {% endblock %}
+    
+    {% block extrahead %} {% endblock extrahead %}
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar__wrap">
+                <div class="hamb">
+                    <div class="hamb_menu" id="hamb">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <a href="#" class="logo" id="logo">3PICH</a>
+                <ul class="menu" id="menu">
+                    <li><a href="{% url 'index' %}">На головну</a></li>
+                    <li><a href="#Menu">Меню</a></li>
+                    <li><a href="{% url 'osel' %}">Оселедці</a></li>
+                    <li><a href="{% url 'about' %}">О нас</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="popup" id="popup"></div>
+    <script src="{% static 'threepich/Js/script.js' %}"></script> 
+{% block content %}
+
+{% endblock %}
+</body>
+</html>

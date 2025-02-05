@@ -1,0 +1,33 @@
+{% extends 'Threepich/base.html' %}
+{% load static %}
+
+{% block css_add %}
+ <link type ="text/css" href = "{% static 'threepich/index.css' %}" rel="stylesheet" />
+{% endblock %}
+{% block extrahead %}
+{% endblock extrahead %}
+
+
+{% block title %}
+    3pich
+{% endblock %}
+
+{% block content %}
+<div>
+    <h1 class="h5">Оселедці</h1>
+    <h2 class="h5">Створи свій власний оселедець!</h2>
+    <div>
+        {% for p in osel %}
+        <li class="menu_list">
+            <div>
+            <h2>{{p.title}}</h2>
+            <p>{{p.cost}}</p>
+            <p>{{p.weight}}</p>
+            </div>
+        </li>
+        <p class="cont">{{p.content}}</p>
+        {%endfor%}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'Threepich/base.html' %}
+{% load static %}
+
+{% block css_add %}
+ <link type ="text/css" href = "{% static 'threepich/index.css' %}" rel="stylesheet" />
+{% endblock %}
+{% block extrahead %}
+{% endblock extrahead %}
+
+
+{% block title %}
+    3pich
+{% endblock %}
+
+{% block content %}
+<div class="cont1">
+    <h1>Про нас</h1>
+    <p>Ми ресторан стихійної кухні з українським смаком. Полюбляємо дивувати людей своєю непередбачуваністю.</p>
+    <a class="h7" href="https://www.instagram.com/3pich.ua/">3pich у інстаграмі</a>
+</div>
+
+{% endblock %}

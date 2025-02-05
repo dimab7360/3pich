@@ -1,0 +1,106 @@
+{% extends 'Threepich/base.html' %}
+{% load static %}
+
+{% block css_add %}
+ <link type ="text/css" href = "{% static 'threepich/index.css' %}" rel="stylesheet" />
+{% endblock %}
+{% block extrahead %}
+{% endblock extrahead %}
+
+
+{% block title %}
+    3pich
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="container">
+    <div class="nazva">
+        <h1 class="h1">Трипіччя</h1>
+        <h2 class="h2">Ресторан непердбачуваної кухні</h2>
+    </div>
+</div>
+<div class="Menu" id="Menu">
+    <div class="cont_menu">
+        <h3 class="h3">Меню</h3>
+        <ul class="menu_all">
+            <details>
+            <summary><h4 class="h4">Перші страви</h4></summary>
+            {% for p in persh_str %}
+            
+            <li class="menu_list">
+                <div>
+                <h2>{{p.title}}</h2>
+                <p>{{p.cost}}</p>
+                <p>{{p.weight}}</p>
+                </div>
+            </li>
+            <p class="cont">{{p.content}}</p>
+            {%endfor%}
+            </details>
+            <details>
+            <summary><h5 class="h4">Другі страви</h5></summary>
+            {% for h in drug_str%}
+            
+            <li class="menu_list">
+                <div>
+                <h2>{{h.title}}</h2>
+                <p>{{h.cost}}</p>
+                <p>{{h.weight}}</p>
+                </div>
+            </li>
+            <p class="cont">{{h.content}}</p>
+            {%endfor%}
+            </details>
+            <details>
+            <summary><h6 class="h4">Оселедці</h6></summary>
+            
+            <p class="p">То є довга тарілка (не риба)
+                В кінці є тлумачення кожного складнику оселедцю і його вартості. Ідеальний варіант для застілля та осзнайомлення з нашою кухнею. 
+            </p>
+            {% for g in osel %}
+           
+            <li class="menu_list">
+                <div>
+                <h2>{{g.title}}</h2>
+                <p>{{g.cost}}</p>
+                <p>{{g.weight}}</p>
+                </div>
+            </li>
+            <p class="cont">{{g.content}}</p>
+            {%endfor%}
+            </details>
+            <details>
+            <summary><p class="h4">Вмочати</p></summary>
+            {% for q in vmoch %}
+           
+            <li class="menu_list">
+                <div>
+                <h2>{{q.title}}</h2>
+                <p>{{q.cost}}</p>
+                <p>{{q.weight}}</p>
+                </div>
+            </li>
+            <p class="cont">{{q.content}}</p>
+            {%endfor%}
+            </details>
+            <details>
+            <summary><p class="h4">Напої</p></summary>
+            {% for n in napoi %}
+            
+            <li class="menu_list">
+                <div>
+                <h2>{{n.title}}</h2>
+                <p>{{n.cost}}</p>
+                <p>{{n.weight}}</p>
+                </div>
+            </li>
+            <p class="cont">{{n.content}}</p>
+            {%endfor%}
+            </details>
+        </ul>
+    </div>
+</div>
+{% endblock %}
